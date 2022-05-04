@@ -1,0 +1,20 @@
+-- Primero Crear el entorno
+python -m venv venv
+
+-- Activarlo
+source venv/Scripts/activate
+
+-- Instalar las dependencias (Validar que esten apuntando al interprete del venv)
+pip install Flask python-dotenv psycopg2-binary Flask-SQLAlchemy Flask-Migrate flask-cors && pip freeze > requirements.txt
+
+-- Ejecutar Flask (Luego de configurar el .env)
+flask run
+
+-- Iniciar las migraciones (Una sola vez)
+flask db init
+
+-- Comment
+flask db migrate -m ""
+
+-- Push
+flask db upgrade
